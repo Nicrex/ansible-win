@@ -1,2 +1,6 @@
-- name: Reboot the machine with all defaults
-  win_reboot:
+---
+- name: "Restart hosts"
+  hosts: windows
+  tasks:
+    - name: "Restart Windows"
+      win_reboot:
