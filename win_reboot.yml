@@ -1,5 +1,5 @@
 --
-- name: win_ping module demo
+- name: win_reboot
   hosts: all
   become: false
   gather_facts: false
