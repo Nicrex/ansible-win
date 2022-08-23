@@ -3,7 +3,5 @@
   hosts: all
   become: false
   gather_facts: false
-  tasks:
-    - name: Reboot server
-    win_reboot:
+  win_reboot:
   
