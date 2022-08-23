@@ -25,4 +25,3 @@
       win_file:
        path: C:\ansible_examples\7z1701-x64.msi
        state: absent
-~                                                                      
