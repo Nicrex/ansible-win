@@ -3,7 +3,7 @@
   become: false
   gather_facts: false
   tasks:
-    - name: reboot host(s)
+    - name: reboot host
       ansible.windows.win_reboot:
         msg: "reboot by Ansible"
         pre_reboot_delay: 5
