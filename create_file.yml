@@ -8,5 +8,5 @@
         src: files/create_file.ps1
         dest: C:\create_file.ps1
 
-- name: Run powershell script
-  win_shell: C:\create_file.ps1
+    - name: Run powershell script
+    win_shell: C:\create_file.ps1
