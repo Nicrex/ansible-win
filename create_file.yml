@@ -1,5 +1,5 @@
 ---
-- name: win_ping module demo
+- name: create_txt_test
   hosts: all
   gather_facts: false
   tasks:
@@ -8,8 +8,8 @@
         src: files/create_file.ps1
         dest: C:\create_file.ps1
         
-- name: Run powershell script
-  win_shell: C:\create_file.ps1
-  register: res
-  
-- debug: msg="{{ res }}"
+        
+        - name: Run powershell script
+        win_shell: C:\create_file.ps1
+        register: res
+        - debug: msg="{{ res }}"
