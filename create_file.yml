@@ -10,3 +10,8 @@
 
     - name: Run powershell script
       win_shell: C:\create_file.ps1
+    
+    - name: Clean up file
+      win_file:
+       path: C:\create_file.ps1
+       state: absent                                                               
