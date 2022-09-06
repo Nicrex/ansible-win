@@ -1,0 +1,14 @@
+---
+- name: Shutdown server
+  win_command: powershell.exe Stop-Computer -Force
+      
+- name: Wait for system to become reachable
+   ansible.builtin.wait_for_connection:
+    
+- name: CPU core check
+  win_command: wmic cpu get NumberOfCores
+  register: cpu_results
+
+- name: Memory check
+  win_command: (systeminfo | Select-String 'Total Physical Memory:').ToString().Split(':')[1].Trim()
+  register: mem_results
