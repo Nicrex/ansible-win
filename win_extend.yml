@@ -1,5 +1,6 @@
 ---
 - name: Shutdown server
+  hosts: all
   win_command: powershell.exe Stop-Computer -Force
       
 - name: Wait for system to become reachable
