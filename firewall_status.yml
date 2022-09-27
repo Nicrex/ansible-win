@@ -2,7 +2,7 @@
 - hosts: all
   tasks:
   - name: Run a command under cmd
-    shell: netsh advfirewall show allprofiles state
+    win_command: netsh advfirewall show allprofiles state
     register: result
   - name: printig results
     debug:
