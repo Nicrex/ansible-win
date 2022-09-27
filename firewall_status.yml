@@ -1,0 +1,12 @@
+---
+
+- hosts: all
+  name: Check firewall status
+
+  tasks:
+          - name: Check firewall status
+            shell: netsh advfirewall show allprofiles state
+            register: command_output
+
+          - debug:
+                   var: command_output.stdout_lines
