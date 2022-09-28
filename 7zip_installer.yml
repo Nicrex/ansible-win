@@ -10,18 +10,18 @@
 
       win_get_url:
 
-        url: https://1drv.ms/u/s!AuRfNNRwzbB5gapgTyK65mnZuch9kw?e=FM5xWC
+        url: https://1drv.ms/u/s!AuRfNNRwzbB5gapi4VWza1Hr7aD1KA?e=dooAid
 
-        dest: C:\7z1701-x64.msi
+        dest: C:\7z1701-x64.exe
 
 
     - name: Install MSI
 
       win_package:
 
-        path: C:\7z1701-x64.msi
+        path: C:\7z1701-x64.exe
         
     - name: Clean up installer
       win_file:
-       path: C:\7z1701-x64.msi
+       path: C:\7z1701-x64.exe
        state: absent
