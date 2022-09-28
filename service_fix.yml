@@ -1,0 +1,27 @@
+- name: Check Wincollect service  
+  hosts: all
+  tasks:
+     - name: check services
+       win_service:
+         name: WinCollect
+       register: result
+       failed_when: result is not defined
+       #ignore_errors: yes
+     - name: "set facts"
+       set_fact:
+          service_status: "{{result.state}}"
+     - name: Restart wincollect
+      # win_command: sc start WinCollect
+       debug:
+         msg: "Service status {{ service_status}}"
+       when: "'stopped' in service_status"
+       
+     - name: start wincollect
+       win_command: sc start WinCollect
+       when: "'stopped' in service_status"
+       
+     - name: Service status
+      # win_command: sc start WinCollect
+       debug:
+         msg: "Service status {{ service_status}}"
+       when: "'started' in service_status"
