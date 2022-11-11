@@ -22,8 +22,8 @@
       Get-ChildItem -Path $alldrive.Root -Recurse -Include *.exe -ErrorAction SilentlyContinue | Where {$_.Name -match 'openssl'} | Export-Csv -Path "C:\Windows\Temp\$filename-$(get-date -f dd-MM-yyyy)_openssl_report.csv"
       $fileObj = Get-Item -Path C:\Windows\Temp\$filename-$(get-date -f dd-MM-yyyy)_openssl_report.csv
       if ($fileObj.Length -gt 420) {
-        Send-MailMessage -From 'Andras.Sudi@kyndryl.com' -To 'andras.sudi@kyndryl.com' -Subject "Opensll report $($filename)" -Body "Sending the Openssl report in csv" -Attachments "C:\Windows\Temp\$filename-$(get-date -f dd-MM-yyyy)_openssl_report.csv" -SmtpServer '10.241.236.20'
+        Send-MailMessage -From 'Andras.Sudi@kyndryl.com' -To 'sandriska.12@gmail.com' -Subject "Opensll report $($filename)" -Body "Sending the Openssl report in csv" -Attachments "C:\Windows\Temp\$filename-$(get-date -f dd-MM-yyyy)_openssl_report.csv" -SmtpServer 'smtp.gmail.com'
       }
       else {
-         Send-MailMessage -From 'Andras.Sudi@kyndryl.com' -To 'andras.sudi@kyndryl.com' -Subject "Opensll report $($filename)" -Body "Openssl not installed" -SmtpServer '10.241.236.20'
+         Send-MailMessage -From 'Andras.Sudi@kyndryl.com' -To 'sandriska.12@gmail.com' -Subject "Opensll report $($filename)" -Body "Openssl not installed" -SmtpServer 'smtp.gmail.com'
       }
