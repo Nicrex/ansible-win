@@ -1,15 +1,4 @@
 ---
-- name: 'Step 1: Role ensures that the socks tunnel is setup'
-  hosts: all
-  gather_facts: false
-  roles:
-    - role: ansible-role-event-socks-tunnel
-      run_once: true
-      delegate_to: localhost
-      vars:
-        acc_id: "{{ blueid_shortcode }}"
-        transaction_id: "{{ tower_job_id }}"
- 
 - name: Test Playbook
   hosts: all
   tasks:
