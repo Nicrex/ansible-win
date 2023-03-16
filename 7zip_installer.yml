@@ -17,7 +17,7 @@
 
     - name: Install 7zip
 
-      win_shell: powershell -command Start-Process C:\7z1701-x64.exe -ArgumentList "/S /v/qn"
+      script: ./scripts/install.ps1
 
 
         
