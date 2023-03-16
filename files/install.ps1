@@ -1,0 +1,1 @@
+﻿Start-Process C:\7z1701-x64.exe -ArgumentList "/S /v/qn"
