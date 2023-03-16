@@ -15,11 +15,11 @@
         dest: C:\7z1701-x64.exe
 
 
-    - name: Install MSI
+    - name: Install 7zip
 
-      win_package:
+      win_shell: Start-Process C:\7z1701-x64.exe -ArgumentList "/S /v/qn"
 
-        path: C:\7z1701-x64.exe
+
         
     - name: Clean up installer
       win_file:
