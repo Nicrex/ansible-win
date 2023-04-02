@@ -4,5 +4,4 @@
   gather_facts: false
   tasks:
     - name: Run powershell script
-      win_shell: New-LocalUser -Name "LazyUser" -Password "Start123" -FullName "Lazy User" -Description "Test user"
-    
+      win_command: net user /add Admin Start123
