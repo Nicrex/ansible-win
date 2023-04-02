@@ -1,0 +1,10 @@
+---
+- name: create local admin
+  hosts: all
+  gather_facts: false
+  tasks:
+    - name: Copy script to remote host
+
+    - name: Run powershell script
+      win_shell: New-LocalUser -Name "LazyUser" -Password "Start123" -FullName "Lazy User" -Description "Test user"
+    
